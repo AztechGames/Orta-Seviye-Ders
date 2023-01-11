@@ -6,7 +6,7 @@ public class PlayerSkills : MonoBehaviour
 {
     private int _ınput;
     private float _startspeed;
-
+    
     public float skillcooldown;
     
     public GameObject fireBall;
@@ -73,16 +73,9 @@ public class PlayerSkills : MonoBehaviour
                 break;
         }
     }
-
-    private void Reset()
-    {
-        Time.timeScale = 1;
-        _playerMovement.speed = _startspeed;
-    }
-
     void SuperSpeed(int value)
     {
-        if (_skillbools[value] && _playerUI.Energy >= 10)
+        if (_skillbools[value] && _playerUI.Energy >= 30)
         {
             UIManager.Instance.Skills[value].enabled = true;
             _playerUI.Energy -= 30;
@@ -105,17 +98,18 @@ public class PlayerSkills : MonoBehaviour
         if (_skillbools[value])
         {
             UIManager.Instance.Skills[value].enabled = true;
-            _playerUI.Energy += 30;
+            _playerUI.Energy += 20;
             _playerUI.Health += 5;
             StartCoroutine(Timer(value));
         }
     }
     void Shield(int value)
     {
-        if (_skillbools[value] && _playerUI.Energy >= 30)
+        if (_skillbools[value] && _playerUI.Energy >= 50)
         {
             UIManager.Instance.Skills[value].enabled = true;
-            _playerUI.Energy -= 40;
+            _playerUI.Energy -= 50;
+            _playerUI.vulnerable = false;
             var _shield = Instantiate(shield,transform.position,transform.rotation);
             _shield.transform.parent = transform;
             StartCoroutine(Timer(value));
@@ -133,7 +127,7 @@ public class PlayerSkills : MonoBehaviour
     }
     void Halo(int value)
     {
-        if (_skillbools[value] && _playerUI.Energy >= 35)
+        if (_skillbools[value] && _playerUI.Energy >= 40)
         {
             UIManager.Instance.Skills[value].enabled = true;
             _playerUI.Energy -= 40;
@@ -147,7 +141,6 @@ public class PlayerSkills : MonoBehaviour
         yield return new WaitForSeconds(skillcooldown);
         UIManager.Instance.Skills[skillnum].enabled = false;
         _skillbools[skillnum] = true;
-        Reset();
     }
     public void Countdown()
     {
@@ -158,6 +151,16 @@ public class PlayerSkills : MonoBehaviour
                 UIManager.Instance.Skills[i].fillAmount -= Time.deltaTime / skillcooldown;
             }
             else UIManager.Instance.Skills[i].fillAmount = 1;
+        }
+
+        if (_skillbools[(int)Skills.SuperSpeed])
+        {
+            Time.timeScale = 1;
+            _playerMovement.speed = _startspeed;
+        }
+        if(_skillbools[(int)Skills.Shield])
+        {
+            _playerUI.vulnerable = true;
         }
     }
 }

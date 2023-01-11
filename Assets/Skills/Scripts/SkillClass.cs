@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillClass : MonoBehaviour
@@ -23,7 +20,7 @@ public class SkillClass : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Damage();
+            other.GetComponent<Enemy>().EnemyHealth -= damage;
         }
     }
     
@@ -31,9 +28,5 @@ public class SkillClass : MonoBehaviour
     {
         transform.position += transform.forward * (speed * Time.deltaTime);
     }
-
-    public virtual void Damage()
-    {
-        
-    }
+    
 }

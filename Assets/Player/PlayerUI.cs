@@ -10,6 +10,8 @@ public class PlayerUI : MonoBehaviour
 
     public float EnergyFillAmount;
     
+    [HideInInspector] public bool vulnerable = true;
+    
     private float _health;
     private float _energy;
 
@@ -21,9 +23,12 @@ public class PlayerUI : MonoBehaviour
         }
         set
         {
-            _health = value;
-            _health = Mathf.Clamp(_health, 0, 100);
-            HealthBar.fillAmount = _health / 100;
+            if (vulnerable)
+            {
+                _health = value;
+                _health = Mathf.Clamp(_health, 0, 100);
+                HealthBar.fillAmount = _health / 100;
+            }
         }
     }
     public float Energy
@@ -50,5 +55,4 @@ public class PlayerUI : MonoBehaviour
     {
         if(Energy < 100) Energy += EnergyFillAmount * Time.deltaTime;
     }
-
 }

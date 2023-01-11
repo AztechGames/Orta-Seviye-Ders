@@ -908,7 +908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6772031264743189912
 Transform:
   m_ObjectHideFlags: 0
@@ -2305,7 +2305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6771802097087559458
 Transform:
   m_ObjectHideFlags: 0
@@ -2608,6 +2608,7 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   EnergyBar: {fileID: 0}
   EnergyFillAmount: 10
+  vulnerable: 1
 --- !u!1 &8896677216700675518
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class Halo : SkillClass
     {
         if (other.CompareTag("Enemy"))
         {
-            Damage();
+            other.GetComponent<Enemy>().EnemyHealth -= damage;
         }
     }
 }
