@@ -117,20 +117,20 @@ public class PlayerSkills : MonoBehaviour
     }
     void Rocks(int value)
     {
-        if (_skillbools[value] && _playerUI.Energy >= 25)
+        if (_skillbools[value] && _playerUI.Energy >= 35)
         {
             UIManager.Instance.Skills[value].enabled = true;
-            _playerUI.Energy -= 25;
+            _playerUI.Energy -= 35;
             Instantiate(earth,transform.position + Vector3.down,transform.GetChild(0).rotation);
             StartCoroutine(Timer(value));
         }
     }
     void Halo(int value)
     {
-        if (_skillbools[value] && _playerUI.Energy >= 40)
+        if (_skillbools[value] && _playerUI.Energy >= 45)
         {
             UIManager.Instance.Skills[value].enabled = true;
-            _playerUI.Energy -= 40;
+            _playerUI.Energy -= 45;
             Instantiate(hole,transform.position + new Vector3(0,1.5f,0),transform.GetChild(0).rotation);
             StartCoroutine(Timer(value));
         }

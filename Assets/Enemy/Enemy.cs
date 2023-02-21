@@ -3,29 +3,16 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed;
-    public float chaseDistance;
-    public float attackDistance;
-    public float attackDamage;
-    public float attackRate;
-
-    private float _health;
-    public float EnemyHealth{
-        get { return _health; }
-        set
-        {
-            _health = value;
-            if(_health <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
+    public float speed = 0;
+    public float chaseDistance = 0;
+    public float attackDistance = 0;
+    public float attackDamage = 0;
+    public float attackRate = 0;
 
     private float attackTimer;
     
     private NavMeshAgent _agent;
-    private Transform _player;
+    public Transform _player;
     
     void Start()
     {
@@ -36,6 +23,11 @@ public class Enemy : MonoBehaviour
     }
 
     void Update()
+    {
+        Chase();
+    }
+
+    void Chase()
     {
         if (_player != null)
         {
@@ -54,7 +46,6 @@ public class Enemy : MonoBehaviour
             else _agent.isStopped = true;
         }
     }
-
     void Attack()
     {
         attackTimer -= Time.deltaTime;

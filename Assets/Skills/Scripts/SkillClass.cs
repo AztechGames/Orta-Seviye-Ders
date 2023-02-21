@@ -20,7 +20,7 @@ public class SkillClass : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<Enemy>().EnemyHealth -= damage;
+            other.GetComponent<EnemyUI>().EnemyHealth -= damage;
         }
     }
     
