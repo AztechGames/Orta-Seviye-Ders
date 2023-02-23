@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
     private float attackTimer;
     
     private NavMeshAgent _agent;
-    public Transform _player;
+    
+    [HideInInspector] public Transform _player;
     
     void Start()
     {
@@ -27,7 +28,7 @@ public class Enemy : MonoBehaviour
         Chase();
     }
 
-    void Chase()
+    public virtual void Chase()
     {
         if (_player != null)
         {
@@ -41,18 +42,30 @@ public class Enemy : MonoBehaviour
             else if (distance < attackDistance)
             {
                 _agent.stoppingDistance = attackDistance - 0.1f;
-                Attack();
+                AttackRate();
             }
             else _agent.isStopped = true;
         }
     }
-    void Attack()
+    public virtual void AttackRate()
     {
         attackTimer -= Time.deltaTime;
         if(attackTimer <= 0)
         {
-            _player.GetComponent<PlayerUI>().Health -= attackDamage;
+            Attack();
             attackTimer = attackRate;
         }
     }
+
+    public virtual void Attack()
+    {
+        _player.GetComponent<PlayerUI>().Health -= attackDamage;
+    }
+    //int numberofobj , float radius , for (float angle = i * mathf.pı * 2 / numberofobj )
+    // float x = mathf.cos(angle) * radius;
+    // float z = mathf.sin(angle) * radius;
+    // vector3 pos = transform pos + new vector3(x,0,z);
+    // flaot angledegrees = angle * mathf.rad2deg;
+    // quaternion rot = quaternion.euler(0,angledegrees,0);
+    // gameobject obj = instantiate(prefab,pos,rot);
 }
