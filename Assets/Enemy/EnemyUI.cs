@@ -18,7 +18,7 @@ public class EnemyUI : MonoBehaviour
             HealthBar.fillAmount = _health / maxHealth;
             if(_health <= 0)
             {
-                Destroy(gameObject);
+                Die();
             }
         }
     }
@@ -29,10 +29,15 @@ public class EnemyUI : MonoBehaviour
         EnemyHealth = maxHealth;
         cam = Camera.main;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         HealthBar.transform.parent.LookAt(cam.transform);
+    }
+
+    public void Die()
+    {
+        GetComponent<RewardDrop>().Drop();
+        Destroy(gameObject);
     }
 }

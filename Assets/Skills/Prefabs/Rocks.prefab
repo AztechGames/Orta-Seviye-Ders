@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2754538112583125331}
   - component: {fileID: 3837916372769824753}
   - component: {fileID: 3148699073959616054}
+  - component: {fileID: 1016417118951007492}
   m_Layer: 3
   m_Name: kaya4
   m_TagString: Untagged
@@ -97,6 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.95571846, y: 0.80566144, z: 0.94670945}
   m_Center: {x: -0.007270474, y: -0.029966902, z: -0.040300306}
+--- !u!208 &1016417118951007492
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300670035358861963}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47800002, y: 0.40300003, z: 0.47300002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.007, y: -0.030000001, z: -0.040000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1507367792030375267
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +126,7 @@ GameObject:
   - component: {fileID: 3898975906179668227}
   - component: {fileID: 1402256109092161978}
   - component: {fileID: 2280401074199812204}
+  - component: {fileID: 4378683902726173243}
   m_Layer: 3
   m_Name: Rock1
   m_TagString: Untagged
@@ -194,6 +212,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.955718, y: 0.80566144, z: 0.9467091}
   m_Center: {x: -0.007270466, y: -0.029966423, z: -0.04030792}
+--- !u!208 &4378683902726173243
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507367792030375267}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47800002, y: 0.40300003, z: 0.47300002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.007, y: -0.030000001, z: -0.040000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1734308282788424382
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +307,7 @@ GameObject:
   - component: {fileID: 4710118203682662934}
   - component: {fileID: 6315448624067813195}
   - component: {fileID: 5476452755429512454}
+  - component: {fileID: 7084985420312338339}
   m_Layer: 3
   m_Name: kaya3
   m_TagString: Untagged
@@ -358,6 +393,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.95571816, y: 0.80566156, z: 0.94670916}
   m_Center: {x: -0.0072876364, y: -0.029967383, z: -0.04029648}
+--- !u!208 &7084985420312338339
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201983635035812211}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47800002, y: 0.40300003, z: 0.47300002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.007, y: -0.030000001, z: -0.040000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &4957051712325148100
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +421,7 @@ GameObject:
   - component: {fileID: 7164563782102382528}
   - component: {fileID: 7323743465525765}
   - component: {fileID: 3816534821730827678}
+  - component: {fileID: 6627389580519662219}
   m_Layer: 3
   m_Name: kaya6
   m_TagString: Untagged
@@ -455,6 +507,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.95571804, y: 0.80566144, z: 0.9467091}
   m_Center: {x: -0.007268562, y: -0.029965948, z: -0.04030029}
+--- !u!208 &6627389580519662219
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957051712325148100}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47800002, y: 0.40300003, z: 0.47300002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.007, y: -0.030000001, z: -0.040000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &5321157037516995746
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +535,7 @@ GameObject:
   - component: {fileID: 2804680403711262157}
   - component: {fileID: 6474887047176863370}
   - component: {fileID: 4808751325655148795}
+  - component: {fileID: 6146705555446263142}
   m_Layer: 3
   m_Name: kaya2
   m_TagString: Untagged
@@ -552,6 +621,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9557185, y: 0.80566144, z: 0.9467093}
   m_Center: {x: -0.0072647496, y: -0.029965471, z: -0.040304113}
+--- !u!208 &6146705555446263142
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321157037516995746}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47800002, y: 0.40300003, z: 0.47300002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.007, y: -0.030000001, z: -0.040000003}
+  m_TimeToStationary: 0.5
 --- !u!1 &8784416960054518804
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +649,7 @@ GameObject:
   - component: {fileID: 5877448846664225024}
   - component: {fileID: 567514372661662896}
   - component: {fileID: 3803745033631535077}
+  - component: {fileID: 8318471858600774431}
   m_Layer: 3
   m_Name: kaya5
   m_TagString: Untagged
@@ -649,3 +735,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.95571816, y: 0.8056615, z: 0.94670904}
   m_Center: {x: -0.007272379, y: -0.029966904, z: -0.040307917}
+--- !u!208 &8318471858600774431
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784416960054518804}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47800002, y: 0.40300003, z: 0.47300002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.007, y: -0.030000001, z: -0.040000003}
+  m_TimeToStationary: 0.5

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
     public float speed = 0;
@@ -15,7 +16,7 @@ public class Enemy : MonoBehaviour
     
     [HideInInspector] public Transform _player;
     
-    void Start()
+    public virtual void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -61,11 +62,5 @@ public class Enemy : MonoBehaviour
     {
         _player.GetComponent<PlayerUI>().Health -= attackDamage;
     }
-    //int numberofobj , float radius , for (float angle = i * mathf.pı * 2 / numberofobj )
-    // float x = mathf.cos(angle) * radius;
-    // float z = mathf.sin(angle) * radius;
-    // vector3 pos = transform pos + new vector3(x,0,z);
-    // flaot angledegrees = angle * mathf.rad2deg;
-    // quaternion rot = quaternion.euler(0,angledegrees,0);
-    // gameobject obj = instantiate(prefab,pos,rot);
+  
 }

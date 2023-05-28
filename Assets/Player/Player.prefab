@@ -575,7 +575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6772065098895297986}
   - component: {fileID: 6676451233154287858}
-  - component: {fileID: 6633992321154908606}
+  - component: {fileID: 4449013160196814017}
   m_Layer: 0
   m_Name: PolyArtWizardStandardMat
   m_TagString: Player
@@ -602,7 +602,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6676451233154287858
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -610,7 +610,7 @@ Animator:
   m_GameObject: {fileID: 6769052372673828826}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: bed7a092d53e7c748bd65db98cebf9d6, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2890c9060ce4f6b45b4082d87f47b27e, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdcb44d85260b8b4eab613d5961d96b8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -619,8 +619,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!136 &6633992321154908606
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &4449013160196814017
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -631,7 +631,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.8
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &6769056879835077876
@@ -2593,6 +2593,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  _anim: {fileID: 0}
 --- !u!114 &8896677215951093375
 MonoBehaviour:
   m_ObjectHideFlags: 0

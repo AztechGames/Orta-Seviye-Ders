@@ -45,7 +45,7 @@ public class PlayerSkills : MonoBehaviour
         if (Input.inputString != "")
         {
             int.TryParse(Input.inputString, out _ınput);
-            if(_ınput > 0 && _ınput < 8)
+            if(_ınput > 0 && _ınput < 6)
             {
                 Skill = (Skills)_ınput - 1;
             }
@@ -65,13 +65,14 @@ public class PlayerSkills : MonoBehaviour
                 break;
             case Skills.Stamina: Stamina((int)Skills.Stamina);
                 break;
-            case Skills.Shield: Shield((int)Skills.Shield);
+            case Skills.Shield: BasedMethod((int)Skills.Shield,50,shield,Vector3.zero);
                 break;
-            case Skills.Rocks: Rocks((int)Skills.Rocks);
+            case Skills.Rocks: BasedMethod((int)Skills.Rocks,35,earth,Vector3.down);
                 break;
-            case Skills.Halo: Halo((int)Skills.Halo);
+            case Skills.Halo: BasedMethod((int)Skills.Halo,45,hole,new Vector3(0,1.5f,0));
                 break;
         }
+        _playerMovement._anim.SetBool("Attack",true);
     }
     void SuperSpeed(int value)
     {
@@ -103,35 +104,21 @@ public class PlayerSkills : MonoBehaviour
             StartCoroutine(Timer(value));
         }
     }
-    void Shield(int value)
+
+    void BasedMethod(int value,int energy, GameObject skillObject,Vector3 skillPosition)
     {
-        if (_skillbools[value] && _playerUI.Energy >= 50)
+        if (_skillbools[value] && _playerUI.Energy >= energy)
         {
             UIManager.Instance.Skills[value].enabled = true;
-            _playerUI.Energy -= 50;
-            _playerUI.vulnerable = false;
-            var _shield = Instantiate(shield,transform.position,transform.rotation);
-            _shield.transform.parent = transform;
-            StartCoroutine(Timer(value));
-        }
-    }
-    void Rocks(int value)
-    {
-        if (_skillbools[value] && _playerUI.Energy >= 35)
-        {
-            UIManager.Instance.Skills[value].enabled = true;
-            _playerUI.Energy -= 35;
-            Instantiate(earth,transform.position + Vector3.down,transform.GetChild(0).rotation);
-            StartCoroutine(Timer(value));
-        }
-    }
-    void Halo(int value)
-    {
-        if (_skillbools[value] && _playerUI.Energy >= 45)
-        {
-            UIManager.Instance.Skills[value].enabled = true;
-            _playerUI.Energy -= 45;
-            Instantiate(hole,transform.position + new Vector3(0,1.5f,0),transform.GetChild(0).rotation);
+            _playerUI.Energy -= energy;
+            var s_Object = Instantiate(skillObject, transform.position + skillPosition, transform.GetChild(0).rotation);
+            if (skillObject == shield)
+            {
+                s_Object.transform.parent = transform;
+                _playerUI.vulnerable = false;
+            }
+            else _playerUI.vulnerable = true;
+            
             StartCoroutine(Timer(value));
         }
     }
@@ -140,6 +127,7 @@ public class PlayerSkills : MonoBehaviour
         _skillbools[skillnum] = false;
         yield return new WaitForSeconds(skillcooldown);
         UIManager.Instance.Skills[skillnum].enabled = false;
+        _playerMovement._anim.SetBool("Attack",false);
         _skillbools[skillnum] = true;
     }
     public void Countdown()
